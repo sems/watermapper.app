@@ -27,7 +27,15 @@ body
     min-height: 100vh
     background: $light-bg
     color: #222
-    padding: 0 25%
+    padding: 0 7%
+    @media (max-width: 576px)
+        padding: 0 10%
+    @media (min-width: 768px)
+        padding: 0 17.5%
+    @media (min-width: 992px)
+        padding: 0 22.5%
+    @media (min-width: 1200px)
+        padding: 0 25%
     @media (prefers-color-scheme: dark) 
         background: $dark-bg
         color: #efefef
