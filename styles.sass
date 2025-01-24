@@ -27,7 +27,7 @@ body
     min-height: 100vh
     background: $light-bg
     color: #222
-    padding: 0 7%
+    padding: 0 5%
     @media (max-width: 576px)
         padding: 0 10%
     @media (min-width: 768px)
@@ -44,10 +44,15 @@ footer
     padding-bottom: 4rem
 
 header
+    margin: 2rem 0rem 0rem
+    @media (min-width: 768px)
+        margin: 4rem 0rem 0rem
+    @media (min-height: 992px)
+        margin: 8rem 0rem 0rem
     h1
         font-size: 4rem
         font-weight: 700
-        margin: 8rem 0rem 1rem
+        margin: 0rem 0rem 1rem
 
 p 
     font-size: 1.2rem
@@ -64,6 +69,7 @@ img
 
 .app-screenshots
     display: flex
+    overflow: auto
     justify-content: center
     gap: 3rem
     padding: 3rem
@@ -73,11 +79,13 @@ img
     margin: 1rem
 
 .screenshot 
-    width: 15rem
+    width: 60%
     height: auto
     border-radius: 1rem
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
     transition: transform 0.2s
+    @media (min-width: 768px)
+        width: 15rem
 
 footer
     p
