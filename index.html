@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Mapper</title>
+    <meta name="author" content="Sem Spanhaak">
+    <meta name="description" content="Water Mapper, your way to find waterfountains in the Netherlands!"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#36359d" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#36359d" media="(prefers-color-scheme: dark)">
+
     <link rel="stylesheet" href="styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
@@ -13,17 +19,28 @@
     <div class="container">
         <header>
             <h1>Water Mapper</h1>
-            <a href="https://apps.apple.com/app/water-mapper/id6615082302" target="_blank">
-                <img src="/resources/appstore.svg" class="appstore">
+            <p>A way to find nearby waterfountains, in the Netherlands.</p>
+            <p class="list">
+                - Works offline<br>
+                - Checks distance to the waterfountains<br>
+                - Start navigation straight from the app<br>
+                - Support mutliple data sources (PRO)<br>
+                - On device location validation (PRO)<br>
+            </p>
+            <a href="//apps.apple.com/app/water-mapper/id6615082302" target="_blank">
+                <img class="appstore" src="/resources/appstore.svg">
             </a>
+            <p>Looking for a way to contact? <br> You can, through <a className="bsky" href="//bsky.app/profile/watermapper.app" target="_blank">Bluesky</a> or email <a className="me" href="mailto:watermapper@sems.dev">watermapper@sems.dev</a></p>
         </header>
         <main>
             <section class="app-screenshots">
-                <img src="/screenshot1.jpg" alt="Screenshot 1" class="screenshot">
-                <img src="/screenshot2.jpg" alt="Screenshot 2" class="screenshot">
+                <img draggable="false" (dragstart)="false;" src="resources/screenshot1.jpg" alt="Screenshot 1" class="screenshot">
+                <img draggable="false" (dragstart)="false;" src="resources/screenshot2.jpg" alt="Screenshot 2" class="screenshot">
             </section>
         </main>
         <footer>
+            <p>Made with ❤️ in Utrecht 🇳🇱</p>
+            <p>Side project from <a className="sem" href="//sems.dev" target="_blank">Sem</a></p>
             <p>© 2025 Water Mapper</p>
         </footer>
     </div>

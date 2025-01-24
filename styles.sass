@@ -7,39 +7,53 @@ $font-family: "Inter", "Helvetica Neue", sans-serif
 html, body 
     height: 100%
     margin: 0px
-    // padding: 0px
 
 body
     font-family: $font-family
     text-align: center
     background: $light-bg
     color: #f4f4f4
+    @media (prefers-color-scheme: dark) 
+        background: $dark-bg
+        color: #f4f4f4
     a
         text-decoration: underline
+        color: #36359d
+        font-weight: 500
 
 .container 
-    // height: 100%
+    height: 100%
     background-repeat: no-repeat
     min-height: 100vh
     background: $light-bg
     color: #222
+    padding: 0 25%
     @media (prefers-color-scheme: dark) 
         background: $dark-bg
         color: #efefef
 
-header 
-    h1 
-        font-size: 3rem
+footer
+    padding-bottom: 4rem
+
+header
+    h1
+        font-size: 4rem
         font-weight: 700
-        margin: 3rem 1rem
-    p 
-        font-size: 1rem
-        margin: 0.5rem 0
-        font-weight: 400
+        margin: 8rem 0rem 1rem
+
+p 
+    font-size: 1.2rem
+    margin: 0.5rem 0
+    font-weight: 400
+    margin: 1rem 0rem
+
+.list 
+    line-height: 1.5em
+    font-size: 1.1em 
 
 img
-    user-drag: none
     user-select: none
+
 .app-screenshots
     display: flex
     justify-content: center
@@ -48,15 +62,16 @@ img
 
 .appstore
     height: 5rem
+    margin: 1rem
 
 .screenshot 
     width: 15rem
     height: auto
-    border-radius: 12px
+    border-radius: 1rem
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
     transition: transform 0.2s
 
-@media (prefers-color-scheme: dark) 
-    body
-        background: $dark-bg
-        color: #f4f4f4
+footer
+    p
+        font-size: 1.1rem
+        margin: 0.3rem 0
