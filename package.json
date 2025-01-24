@@ -1,0 +1,17 @@
+{
+  "name": "water-mapper-website",
+  "version": "1.0.0",
+  "description": "Simple website for Water Mapper app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files '*.html, styles.css'",
+    "sass": "sass --watch styles.sass:styles.css",
+    "dev": "npm run sass & npm run start"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.29.3",
+    "sass": "^1.68.0"
+  }
+}

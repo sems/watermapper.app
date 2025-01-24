@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  text-align: center;
+  background: #f2f2f2;
+  color: #f4f4f4;
+}
+body a {
+  text-decoration: underline;
+}
+
+.container {
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background: #f2f2f2;
+  color: #222;
+}
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: #151515;
+    color: #efefef;
+  }
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 3rem 1rem;
+}
+header p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-weight: 400;
+}
+
+img {
+  user-drag: none;
+  user-select: none;
+}
+
+.app-screenshots {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem;
+}
+
+.appstore {
+  height: 5rem;
+}
+
+.screenshot {
+  width: 15rem;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #151515;
+    color: #f4f4f4;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
