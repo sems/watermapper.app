@@ -8,7 +8,7 @@
     "generate-favicon": "node generate-favicon.js",
     "sass": "sass src/styles.sass:src/styles.css --style=compressed && postcss src/styles.css --use autoprefixer -o src/styles.css",
     "sass:watch": "sass --watch src/styles.sass:src/styles.css && postcss src/styles.css --use autoprefixer -o src/styles.css",
-    "copy-files": "copyfiles -u 1 src/index.html src/privacy.html src/styles.css src/resources/**/* build",
+    "copy-files": "copyfiles -u 1 src/CNAME src/index.html src/privacy.html src/styles.css src/resources/**/* build",
     "clean-site": "rimraf build",
     "build": "npm run clean-site && npm run sass && npm run generate-favicon && npm run copy-files",
     "start": "browser-sync start --config bs-config.js",
