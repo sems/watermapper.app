@@ -1,34 +1,35 @@
 const sharp = require("sharp");
 const ico = require("sharp-ico");
+const fsPromises = require("fs").promises;
 
 const sourcePath = "./resources/icon-light.png";
-const outputDir = "./resources";
-const faviconDimensions = [16, 24, 32, 64];
+const outputDir = "./resources/icons";
+const faviconDimensions = [16, 24, 32, 64, 76, 120, 152, 180];
 
 generateFavicons(sourcePath, outputDir)
     .then(() => console.log("Favicons generated successfully!"))
     .catch((err) => console.error("Error generating favicons:", err));
 
 async function generateFavicons(sourcePath, outputDir) {
-    const sharpInstances = await Promise.all(
-        faviconDimensions.map(async (dimension) => {
-            const outputFile = `${outputDir}/favicon-${dimension}x${dimension}.png`;
-            await sharp(sourcePath)
-                .resize(dimension, dimension)
-                .toFile(outputFile);
-            console.log(`Generated: ${outputFile}`);
+    try {
+        await fsPromises.mkdir(outputDir, { recursive: true });
 
-            return sharp(outputFile);
-        })
-    );
+        const sharpInstances = await Promise.all(
+            faviconDimensions.map(async (dimension) => {
+                const outputFile = `${outputDir}/favicon-${dimension}x${dimension}.png`;
+                await sharp(sourcePath)
+                    .resize(dimension, dimension)
+                    .toFile(outputFile);
+                console.log(`Generated: ${outputFile}`);
 
-    const icoOutputPath = `${outputDir}/favicon.ico`;
-    await ico
-        .sharpsToIco(sharpInstances, icoOutputPath)
-        .then((info) => {
-            console.log(`Generated ICO: ${icoOutputPath} (Size: ${info.size} bytes)`);
-        })
-        .catch((err) => {
-            throw new Error(`Error creating ICO file: ${err.message}`);
-        });
+                return sharp(outputFile);
+            })
+        );
+
+        const icoOutputPath = `${outputDir}/favicon.ico`;
+        const info = await ico.sharpsToIco(sharpInstances, icoOutputPath);
+        console.log(`Generated ICO: ${icoOutputPath} (Size: ${info.size} bytes)`);
+    } catch (err) {
+        console.error("Error generating favicons:", err);
+    }
 }
