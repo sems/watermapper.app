@@ -1,13 +1,19 @@
 {
   "name": "water-mapper-website",
+  "homepage": "https://watermapper.app",
   "version": "1.0.0",
   "description": "Simple website for Water Mapper app.",
   "main": "index.js",
   "scripts": {
     "generate-favicon": "node generate-favicon.js",
-    "start": "browser-sync start --server --files '*.html, styles.css'",
-    "sass": "sass --watch styles.sass:styles.css && postcss styles.css --use autoprefixer -o styles.css",
-    "dev": "npm-run-all --parallel start sass"
+    "sass": "sass src/styles.sass:src/styles.css --style=compressed && postcss src/styles.css --use autoprefixer -o src/styles.css",
+    "sass:watch": "sass --watch src/styles.sass:src/styles.css && postcss src/styles.css --use autoprefixer -o src/styles.css",
+    "copy-files": "copyfiles -u 1 src/index.html src/privacy.html src/styles.css src/resources/**/* build",
+    "clean-site": "rimraf build",
+    "build": "npm run clean-site && npm run sass && npm run generate-favicon && npm run copy-files",
+    "start": "browser-sync start --config bs-config.js",    
+    "dev": "npm-run-all --parallel start sass:watch",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "author": "Your Name",
   "license": "MIT",
@@ -19,8 +25,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "copyfiles": "^2.4.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.5.1",
-    "postcss-cli": "^11.0.0"
+    "postcss-cli": "^11.0.0",
+    "gh-pages": "^3.2.3",
+    "rimraf": "^3.0.2"
   }
 }

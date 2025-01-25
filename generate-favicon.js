@@ -2,8 +2,8 @@ const sharp = require("sharp");
 const ico = require("sharp-ico");
 const fsPromises = require("fs").promises;
 
-const sourcePath = "./resources/icon-light.png";
-const outputDir = "./resources/icons";
+const sourcePath = "src/resources/icon-light.png";
+const outputDir = "build/resources/icons";
 const faviconDimensions = [16, 24, 32, 64, 76, 120, 152, 180];
 
 generateFavicons(sourcePath, outputDir)
