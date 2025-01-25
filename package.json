@@ -5,17 +5,17 @@
   "description": "Simple website for Water Mapper app.",
   "main": "index.js",
   "scripts": {
-    "generate-favicon": "node generate-favicon.js",
+    "generate-favicon": "node ./node-scripts/generate-favicon.js",
     "sass": "sass src/styles.sass:src/styles.css --style=compressed && postcss src/styles.css --use autoprefixer -o src/styles.css",
     "sass:watch": "sass --watch src/styles.sass:src/styles.css && postcss src/styles.css --use autoprefixer -o src/styles.css",
-    "copy-files": "copyfiles -u 1 src/CNAME src/index.html src/privacy.html src/styles.css src/resources/**/* build",
+    "copy-files": "copyfiles -u 1 src/CNAME src/robots.txt src/**/*.html src/styles.css src/resources/**/* build",
     "clean-site": "rimraf build",
     "build": "npm run clean-site && npm run sass && npm run generate-favicon && npm run copy-files",
-    "start": "browser-sync start --config bs-config.js",
+    "start": "browser-sync start --config ./node-scripts/bs-config.js",
     "dev": "npm-run-all --parallel start sass:watch",
     "deploy": "npm run build && gh-pages -d build"
   },
-  "author": "Your Name",
+  "author": "Sem Spanhaak",
   "license": "MIT",
   "dependencies": {
     "browser-sync": "^3.0.3",
