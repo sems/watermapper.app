@@ -130,22 +130,24 @@ img
 
 .app-screenshots
     display: flex
-    overflow: auto
-    justify-content: center
+    overflow-x: auto
+    justify-content: flex-start
     gap: 3rem
-    padding: 3rem
+    padding: 3rem 0
 
 .appstore
     height: 5rem
     margin: 1rem
 
 .screenshot 
+    flex: 0 0 60%
     width: 60%
     height: auto
     border-radius: 1rem
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
     transition: transform 0.2s
     @media (min-width: 768px)
+        flex-basis: 15rem
         width: 15rem
 
 footer
